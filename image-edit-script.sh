@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-TEXT="Abhijit Paul"
-convert -font  Flaemische-Kanzleischrift -fill black -pointsize 170 -draw "text 930,800 '$TEXT'" image1.png image2.png
-xdg-open image2.png
-echo "It works!"
+
+cat names.txt | while read NAME 
+do
+   # do something with $line here
+convert -font  Flaemische-Kanzleischrift -fill black -pointsize 170 -draw "text 930,800 '$NAME'" image1.png "$NAME".png
+echo "Completed certificate for $NAME"
+
+done
